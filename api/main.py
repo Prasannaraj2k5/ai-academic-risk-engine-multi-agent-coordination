@@ -4,7 +4,7 @@ import os
 from pathlib import Path
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, HTMLResponse, Response
 from fastapi.staticfiles import StaticFiles
 
 from api.routes import router as api_router
@@ -47,22 +47,42 @@ def on_startup():
 
 
 
-# Mount frontend static directory if exists
-if FRONTEND_DIR.exists():
-    app.mount("/static", StaticFiles(directory=str(FRONTEND_DIR)), name="static")
-
-
-@app.get("/", include_in_schema=False)
+@app.get("/", response_class=HTMLResponse, include_in_schema=False)
 def serve_dashboard():
-    """Serve the enterprise dashboard frontend."""
+    """Serve the enterprise dashboard frontend without requiring aiofiles."""
     index_path = FRONTEND_DIR / "index.html"
     if index_path.exists():
-        return FileResponse(str(index_path))
-    return {
-        "message": "AI Agent Coordination & Decision Engine API",
-        "health": "/health",
-        "docs": "/docs",
-    }
+        return HTMLResponse(content=index_path.read_text(encoding="utf-8"))
+    return HTMLResponse(
+        "<h3>AI Academic Early-Warning Engine API</h3><p><a href='/docs'>Swagger API Docs</a> | <a href='/health'>Health Check</a></p>"
+    )
+
+
+@app.get("/static/style.css", include_in_schema=False)
+def serve_css():
+    """Serve CSS stylesheet safely without aiofiles dependency."""
+    css_path = FRONTEND_DIR / "style.css"
+    if css_path.exists():
+        return Response(content=css_path.read_text(encoding="utf-8"), media_type="text/css")
+    return Response(content="/* style.css not found */", media_type="text/css", status_code=404)
+
+
+@app.get("/static/app.js", include_in_schema=False)
+def serve_js():
+    """Serve frontend JS application safely without aiofiles dependency."""
+    js_path = FRONTEND_DIR / "app.js"
+    if js_path.exists():
+        return Response(content=js_path.read_text(encoding="utf-8"), media_type="application/javascript")
+    return Response(content="// app.js not found", media_type="application/javascript", status_code=404)
+
+
+# Mount frontend static directory as secondary fallback
+if FRONTEND_DIR.exists():
+    try:
+        app.mount("/static", StaticFiles(directory=str(FRONTEND_DIR)), name="static")
+    except Exception:
+        pass
+
 
 
 if __name__ == "__main__":

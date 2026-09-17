@@ -1,9 +1,21 @@
 # AI Agent Coordination & Decision Engine
 ## AI Academic Early-Warning & Intervention Decision Engine
 
+[![Vercel Deployment](https://img.shields.io/badge/Vercel-Live%20Demo-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://ai-academic-risk-engine-multi-agent.vercel.app/)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Prasannaraj2k5/ai-academic-risk-engine-multi-agent-coordination)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+[![Python 3.11+](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com)
+[![LangGraph](https://img.shields.io/badge/Orchestration-LangGraph-FF6F00?style=for-the-badge)](https://langchain-ai.github.io/langgraph/)
+
+> 🚀 **Live Production Deployment**: [https://ai-academic-risk-engine-multi-agent.vercel.app/](https://ai-academic-risk-engine-multi-agent.vercel.app/)  
+> 📖 **Interactive Swagger API Docs**: [https://ai-academic-risk-engine-multi-agent.vercel.app/docs](https://ai-academic-risk-engine-multi-agent.vercel.app/docs)  
+> 💻 **GitHub Source Repository**: [https://github.com/Prasannaraj2k5/ai-academic-risk-engine-multi-agent-coordination](https://github.com/Prasannaraj2k5/ai-academic-risk-engine-multi-agent-coordination)  
+> **Author**: PRASANNA RAJ K  
 > **System Classification**: Enterprise-Oriented Prototype  
 > **Academic Cohort**: Computer Science & Engineering (Section CSE-A, Semester 5, 60 Students)  
 > **Primary Demonstration Subject**: Student STU104 (Rohan Verma) — Critical Risk Evaluation (89 / 100)
+
 
 ---
 
@@ -334,6 +346,16 @@ py tests/audit_checklist.py
 # 3. Run real performance benchmark (no fabricated numbers)
 py tests/performance_test.py
 ```
+
+---
+
+## Cloud Deployment (Vercel Production)
+
+The application is deployed on Vercel as a hybrid Serverless API + Edge CDN static web application:
+
+- 🌐 **Live Portal**: [https://ai-academic-risk-engine-multi-agent.vercel.app/](https://ai-academic-risk-engine-multi-agent.vercel.app/)
+- 📖 **Swagger OpenAPI Docs**: [https://ai-academic-risk-engine-multi-agent.vercel.app/docs](https://ai-academic-risk-engine-multi-agent.vercel.app/docs)
+- 🩺 **Health Check**: [https://ai-academic-risk-engine-multi-agent.vercel.app/health](https://ai-academic-risk-engine-multi-agent.vercel.app/health)
 
 ---
 

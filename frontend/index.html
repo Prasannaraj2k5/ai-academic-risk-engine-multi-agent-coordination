@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Academic Early-Warning & Intervention Decision Engine</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Dedicated Institutional Authentication Screen -->
+  <div id="authScreen" class="auth-screen">
+    <div class="auth-card">
+      <div class="auth-header">
+        <div class="auth-brand-icon">AE</div>
+        <span class="auth-portal-tag">INSTITUTIONAL ACCESS PORTAL</span>
+        <h2 class="auth-title">AI Academic Early-Warning & Decision Engine</h2>
+        <p class="auth-subtitle">Faculty Advisor & Institutional Governance Sign-In</p>
+      </div>
+
+      <div id="authErrorAlert" class="auth-alert" style="display:none;"></div>
+
+      <form id="authLoginForm" class="auth-form">
+        <div class="form-group">
+          <label for="authEmail" class="form-label">Institutional Email / Username</label>
+          <input type="text" id="authEmail" class="form-input" placeholder="e.g. dr.raman@academics.edu" required autocomplete="username">
+        </div>
+        <div class="form-group">
+          <label for="authPassword" class="form-label">Password</label>
+          <input type="password" id="authPassword" class="form-input" placeholder="Enter institutional password" required autocomplete="current-password">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" id="btnSignIn">Sign In to Advisory Console</button>
+      </form>
+
+      <div class="auth-divider">
+        <span>OR USE 1-CLICK DEMO SIGN-IN</span>
+      </div>
+
+      <div class="quick-login-grid">
+        <button type="button" class="btn-quick-login" onclick="quickLogin('dr.raman@academics.edu', 'faculty2026')">
+          <div class="ql-avatar">KR</div>
+          <div class="ql-text">
+            <strong>Dr. K. Raman</strong>
+            <span>Faculty Academic Advisor</span>
+          </div>
+        </button>
+        <button type="button" class="btn-quick-login" onclick="quickLogin('chair@academics.edu', 'admin2026')">
+          <div class="ql-avatar">SM</div>
+          <div class="ql-text">
+            <strong>Dr. S. Mehta</strong>
+            <span>Department Chair & Dean</span>
+          </div>
+        </button>
+        <button type="button" class="btn-quick-login" onclick="quickLogin('counselor@academics.edu', 'counselor2026')">
+          <div class="ql-avatar">AS</div>
+          <div class="ql-text">
+            <strong>Dr. A. Sharma</strong>
+            <span>Lead Academic Counselor</span>
+          </div>
+        </button>
+      </div>
+
+      <div class="auth-footer">
+        <p>Restricted to authorized faculty, academic advisors, and student welfare officers. All session activities and review actions are recorded in the institutional audit ledger.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Dashboard Container (Gated by Auth) -->
+  <div id="dashboardScreen" class="app-layout" style="display:none;">
+    <!-- Top Navigation Header -->
+    <header class="app-header">
+      <div class="header-container">
+        <div class="brand-section">
+          <div class="brand-icon">AE</div>
+          <div class="brand-text">
+            <h1 class="brand-title">AI Agent Coordination & Decision Engine</h1>
+            <p class="brand-subtitle">AI Academic Early-Warning & Intervention Decision Engine <span class="cohort-tag">CSE-A Cohort</span></p>
+          </div>
+        </div>
+        <div class="header-status">
+          <div class="status-pill" id="dbStatusPill">
+            <span class="status-dot green"></span>
+            <span id="dbStatusText">SQLite Fallback</span>
+          </div>
+          <div class="status-pill" id="llmStatusPill">
+            <span class="status-dot blue"></span>
+            <span id="llmStatusText">Deterministic Fallback</span>
+          </div>
+          <div class="user-profile-pill" id="headerUserSection">
+            <div class="user-avatar-sm" id="headerUserAvatar">KR</div>
+            <div class="user-meta-sm">
+              <span class="user-name-sm" id="headerUserName">Dr. K. Raman</span>
+              <span class="user-role-sm" id="headerUserRole">Faculty Advisor</span>
+            </div>
+            <button class="btn-logout-sm" id="btnLogout" title="Sign Out">Sign Out</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <nav class="tab-nav">
+        <button class="nav-tab active" data-tab="overview">Overview</button>
+        <button class="nav-tab" data-tab="students">Students</button>
+        <button class="nav-tab" data-tab="workflow">Workflow</button>
+        <button class="nav-tab" data-tab="evidence">Evidence</button>
+        <button class="nav-tab" data-tab="metrics">Metrics</button>
+      </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="app-main">
+      
+      <!-- TAB 1: OVERVIEW -->
+      <section id="tab-overview" class="tab-pane active">
+        <!-- 4 KPI Cards -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-title">Total Students</div>
+            <div class="kpi-value" id="kpiTotalStudents">60</div>
+            <div class="kpi-sub">CSE-A Semester 5 Enrolled</div>
+          </div>
+          <div class="kpi-card critical-border">
+            <div class="kpi-title">Critical Risk</div>
+            <div class="kpi-value text-critical" id="kpiCriticalCount">2</div>
+            <div class="kpi-sub">Immediate faculty oversight required</div>
+          </div>
+          <div class="kpi-card high-border">
+            <div class="kpi-title">High Risk</div>
+            <div class="kpi-value text-high" id="kpiHighCount">3</div>
+            <div class="kpi-sub">Requires active intervention plan</div>
+          </div>
+          <div class="kpi-card normal-border">
+            <div class="kpi-title">Medium / Low Risk</div>
+            <div class="kpi-value" id="kpiMedLowCount">10 / 45</div>
+            <div class="kpi-sub">Advisory (10) & Satisfactory (45)</div>
+          </div>
+        </div>
+
+        <!-- Two-Column Operational Layout -->
+        <div class="overview-split">
+          <!-- Left Column: Faculty Advisory Assistant -->
+          <div class="card assistant-card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Faculty Advisory Assistant</h3>
+                <p class="card-desc">Conversational guidance, policy lookup, and student follow-up</p>
+              </div>
+              <span class="badge badge-secondary">Short-Term Memory Active</span>
+            </div>
+            <div class="chat-container">
+              <div class="chat-messages" id="chatMessages">
+                <div class="chat-bubble assistant">
+                  <div class="chat-meta">Faculty Advisory Engine • System</div>
+                  <p>Welcome, Faculty Advisor. I am your academic decision-support assistant. You can ask conceptual questions (e.g. <em>"What is academic risk?"</em>) or request diagnostics for students like <strong>STU104</strong>.</p>
+                </div>
+              </div>
+              <form id="chatForm" class="chat-input-bar">
+                <input type="text" id="chatInput" placeholder="Ask about academic risk, attendance thresholds, or 'Analyze STU104'..." autocomplete="off">
+                <button type="submit" class="btn btn-primary" id="chatSendBtn">Ask</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Right Column: Featured Student Decision Card (STU104) -->
+          <div class="card featured-decision-card">
+            <div class="card-header">
+              <div>
+                <div class="featured-badge">Featured Student Decision Card</div>
+                <h3 class="card-title" id="featuredStudentName">Rohan Verma (STU104)</h3>
+                <p class="card-desc" id="featuredStudentMeta">Section CSE-A • Semester 5 • Advisor: Dr. K. Raman</p>
+              </div>
+              <div class="risk-score-badge critical" id="featuredScoreBadge">
+                <span class="score-num" id="featuredScoreValue">89</span>
+                <span class="score-denom">/100</span>
+                <span class="score-label" id="featuredBandLabel">CRITICAL</span>
+              </div>
+            </div>
+
+            <!-- Telemetry Metrics Bar -->
+            <div class="telemetry-bar">
+              <div class="telemetry-item">
+                <span class="tel-label">Attendance</span>
+                <span class="tel-val text-warning" id="telAttendance">68%</span>
+              </div>
+              <div class="telemetry-item">
+                <span class="tel-label">Current Avg</span>
+                <span class="tel-val" id="telCurrentAvg">54.7%</span>
+              </div>
+              <div class="telemetry-item">
+                <span class="tel-label">Prior Sem</span>
+                <span class="tel-val" id="telPriorAvg">74%</span>
+              </div>
+              <div class="telemetry-item">
+                <span class="tel-label">Perf Drop</span>
+                <span class="tel-val text-critical" id="telDelta">-19.3%</span>
+              </div>
+              <div class="telemetry-item">
+                <span class="tel-label">Failed Tests</span>
+                <span class="tel-val text-critical" id="telFailedTests">2</span>
+              </div>
+              <div class="telemetry-item">
+                <span class="tel-label">Missed Asn</span>
+                <span class="tel-val text-critical" id="telMissedAsn">2</span>
+              </div>
+            </div>
+
+            <!-- Agent Pipeline Status -->
+            <div class="pipeline-section">
+              <div class="pipeline-label">Multi-Agent Coordination Pipeline</div>
+              <div class="pipeline-steps">
+                <div class="pipe-step completed">
+                  <span class="pipe-num">01</span>
+                  <span class="pipe-name">Planning</span>
+                </div>
+                <div class="pipe-arrow">→</div>
+                <div class="pipe-step completed">
+                  <span class="pipe-num">02</span>
+                  <span class="pipe-name">Research</span>
+                </div>
+                <div class="pipe-arrow">→</div>
+                <div class="pipe-step completed">
+                  <span class="pipe-num">03</span>
+                  <span class="pipe-name">Analysis</span>
+                </div>
+                <div class="pipe-arrow">→</div>
+                <div class="pipe-step completed">
+                  <span class="pipe-num">04</span>
+                  <span class="pipe-name">Decision</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Factor Breakdown Table -->
+            <div class="breakdown-section">
+              <div class="section-title">Deterministic Factor Breakdown (Max: 100)</div>
+              <div class="breakdown-grid">
+                <div class="breakdown-chip">
+                  <span class="b-cat">Performance (max 30)</span>
+                  <span class="b-val" id="chipPerf">30 pts</span>
+                </div>
+                <div class="breakdown-chip">
+                  <span class="b-cat">Attendance (max 25)</span>
+                  <span class="b-val" id="chipAtt">25 pts</span>
+                </div>
+                <div class="breakdown-chip">
+                  <span class="b-cat">Assignments (max 20)</span>
+                  <span class="b-val" id="chipAsn">17 pts</span>
+                </div>
+                <div class="breakdown-chip">
+                  <span class="b-cat">Assessments (max 15)</span>
+                  <span class="b-val" id="chipAssess">10 pts</span>
+                </div>
+                <div class="breakdown-chip">
+                  <span class="b-cat">History (max 10)</span>
+                  <span class="b-val" id="chipHist">7 pts</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Risk Factors List -->
+            <div class="factors-section">
+              <div class="section-title">Identified Risk Triggers</div>
+              <div class="tags-container" id="featuredFactorsContainer">
+                <span class="tag tag-critical">Significant performance decline</span>
+                <span class="tag tag-critical">Low attendance</span>
+                <span class="tag tag-critical">Multiple failed assessments</span>
+                <span class="tag tag-warning">Missed assignments</span>
+              </div>
+            </div>
+
+            <!-- Top 3 Interventions -->
+            <div class="interventions-section">
+              <div class="section-title">Recommended Faculty Interventions</div>
+              <ol class="interventions-list" id="featuredInterventionsList">
+                <li>
+                  <strong>Structured Attendance Improvement Plan</strong>
+                  <p>Daily attendance verification with faculty advisor check-ins every Monday.</p>
+                </li>
+                <li>
+                  <strong>Remedial Subject Tutorials</strong>
+                  <p>Enroll in targeted remedial modules for CS301 (48%) and CS302 (45%).</p>
+                </li>
+                <li>
+                  <strong>Mandatory Faculty Counseling</strong>
+                  <p>Dean & Academic Counselor consultation within 7 days.</p>
+                </li>
+              </ol>
+            </div>
+
+            <!-- Human-In-The-Loop Governance -->
+            <div class="review-section">
+              <div class="section-title">Human-In-The-Loop Faculty Governance</div>
+              <div class="review-meta-bar">
+                <span>Urgency: <strong class="text-critical" id="reviewUrgency">Immediate</strong></span>
+                <span>Oversight: <strong id="reviewOversight">Required</strong></span>
+                <span>Follow-up: <strong id="reviewFollowUp">Within 7 Days</strong></span>
+              </div>
+              <div class="review-actions">
+                <input type="text" id="reviewFeedback" class="review-input" placeholder="Optional faculty advisory feedback / adjustment notes...">
+                <div class="action-buttons">
+                  <button class="btn btn-success" id="btnApproveReview">Approve Plan</button>
+                  <button class="btn btn-warning" id="btnModifyReview">Modify</button>
+                  <button class="btn btn-danger" id="btnRejectReview">Reject</button>
+                </div>
+              </div>
+              <div id="reviewConfirmation" class="review-feedback-msg" style="display:none;"></div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: STUDENTS -->
+      <section id="tab-students" class="tab-pane">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Cohort Student Roster (CSE-A)</h3>
+              <p class="card-desc">All 60 enrolled students with real-time academic risk evaluations</p>
+            </div>
+            <div class="table-controls">
+              <input type="text" id="studentSearch" placeholder="Search by name or ID (e.g. STU104)..." class="search-input">
+              <select id="riskFilter" class="filter-select">
+                <option value="ALL">All Risk Bands</option>
+                <option value="CRITICAL">Critical (2)</option>
+                <option value="HIGH">High (3)</option>
+                <option value="MEDIUM">Medium (10)</option>
+                <option value="LOW">Low (45)</option>
+              </select>
+              <button class="btn btn-primary" id="btnRunCohortAnalysis">Re-Analyze Cohort</button>
+            </div>
+          </div>
+          
+          <div class="table-responsive">
+            <table class="data-table" id="studentsTable">
+              <thead>
+                <tr>
+                  <th>Student ID</th>
+                  <th>Name</th>
+                  <th>Section</th>
+                  <th>Attendance %</th>
+                  <th>Current Avg %</th>
+                  <th>Prior Avg %</th>
+                  <th>Delta</th>
+                  <th>Failed Tests</th>
+                  <th>Risk Score</th>
+                  <th>Risk Band</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="studentsTableBody">
+                <!-- Populated dynamically via app.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: WORKFLOW -->
+      <section id="tab-workflow" class="tab-pane">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">LangGraph Multi-Agent Workflow Engine</h3>
+              <p class="card-desc">StateGraph node execution, state transitions, durations, and bounded retry controls</p>
+            </div>
+            <button class="btn btn-primary" id="btnTriggerWorkflow">Trigger Workflow (STU104)</button>
+          </div>
+
+          <!-- Workflow Visual Graph -->
+          <div class="workflow-graph-card">
+            <div class="graph-nodes">
+              <div class="graph-node-box">
+                <div class="node-badge">START</div>
+                <div class="node-title">Request Ingestion</div>
+                <div class="node-sub">User Query Dispatch</div>
+              </div>
+              <div class="graph-connector">→</div>
+              <div class="graph-node-box">
+                <div class="node-badge">01 PLANNING</div>
+                <div class="node-title">Planning Agent</div>
+                <div class="node-sub">Tool Decomp & Tasks</div>
+              </div>
+              <div class="graph-connector">→</div>
+              <div class="graph-node-box">
+                <div class="node-badge">02 RESEARCH</div>
+                <div class="node-title">Research Agent</div>
+                <div class="node-sub">6 Academic Tools</div>
+              </div>
+              <div class="graph-connector">→</div>
+              <div class="graph-node-box">
+                <div class="node-badge">03 ANALYSIS</div>
+                <div class="node-title">Analysis Agent</div>
+                <div class="node-sub">Deterministic Scoring</div>
+              </div>
+              <div class="graph-connector">→</div>
+              <div class="graph-node-box">
+                <div class="node-badge">04 DECISION</div>
+                <div class="node-title">Decision Agent</div>
+                <div class="node-sub">Interventions & Review</div>
+              </div>
+              <div class="graph-connector">→</div>
+              <div class="graph-node-box">
+                <div class="node-badge">END</div>
+                <div class="node-title">State Retention</div>
+                <div class="node-sub">DB & Session Memory</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Active Execution Detail -->
+          <div class="execution-details-grid">
+            <div class="detail-box">
+              <span class="detail-label">Active Workflow ID</span>
+              <span class="detail-val mono" id="wfIdVal">wf-ready</span>
+            </div>
+            <div class="detail-box">
+              <span class="detail-label">Current Agent</span>
+              <span class="detail-val" id="wfAgentVal">Idle</span>
+            </div>
+            <div class="detail-box">
+              <span class="detail-label">Workflow Status</span>
+              <span class="badge badge-success" id="wfStatusVal">COMPLETED</span>
+            </div>
+            <div class="detail-box">
+              <span class="detail-label">Duration</span>
+              <span class="detail-val mono" id="wfDurationVal">12.4 ms</span>
+            </div>
+            <div class="detail-box">
+              <span class="detail-label">Retry Count</span>
+              <span class="detail-val mono" id="wfRetryVal">0 / 3</span>
+            </div>
+          </div>
+
+          <!-- Execution Log Viewer -->
+          <div class="log-terminal-section">
+            <div class="section-title">Workflow Execution Trace</div>
+            <pre class="terminal-log" id="workflowLogText">System initialized. Awaiting workflow trigger...</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: EVIDENCE -->
+      <section id="tab-evidence" class="tab-pane">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Academic Evidence Explorer</h3>
+              <p class="card-desc">Inspect verified academic evidence from the 6 specialized tools</p>
+            </div>
+            <div class="student-picker">
+              <label for="evidenceStudentSelect">Select Student:</label>
+              <select id="evidenceStudentSelect" class="filter-select">
+                <option value="STU104" selected>STU104 (Rohan Verma)</option>
+                <option value="STU112">STU112 (Critical)</option>
+                <option value="STU118">STU118 (High)</option>
+                <option value="STU101">STU101 (Low)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Evidence Tri-Panel -->
+          <div class="evidence-grid">
+            <!-- 1. Attendance Telemetry -->
+            <div class="evidence-card">
+              <div class="ev-card-header">
+                <h4 class="ev-title">Attendance Telemetry</h4>
+                <span class="badge badge-warning" id="evAttBadge">Warning (68%)</span>
+              </div>
+              <div class="ev-content">
+                <p class="ev-desc">Rule: &lt;66% Critical, 66-74.99% Warning, &ge;75% Acceptable</p>
+                <table class="sub-table">
+                  <thead>
+                    <tr><th>Course</th><th>Attendance</th><th>Status</th></tr>
+                  </thead>
+                  <tbody id="evAttendanceTable">
+                    <!-- Populated dynamically -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- 2. Coursework Marks & Assessments -->
+            <div class="evidence-card">
+              <div class="ev-card-header">
+                <h4 class="ev-title">Assessment & Marks Breakdown</h4>
+                <span class="badge badge-danger" id="evPerfBadge">2 Failed (&lt;50%)</span>
+              </div>
+              <div class="ev-content">
+                <p class="ev-desc">Current Average: <strong id="evCurrentAvgText">54.7%</strong> (Prior: 74%)</p>
+                <table class="sub-table">
+                  <thead>
+                    <tr><th>Course</th><th>Marks</th><th>Result</th></tr>
+                  </thead>
+                  <tbody id="evPerformanceTable">
+                    <!-- Populated dynamically -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- 3. Assignment Compliance -->
+            <div class="evidence-card">
+              <div class="ev-card-header">
+                <h4 class="ev-title">Assignment Compliance Telemetry</h4>
+                <span class="badge badge-warning" id="evAsnBadge">2 Missed / 4 Late</span>
+              </div>
+              <div class="ev-content">
+                <p class="ev-desc">Total: 20 Coursework Deliverables • Completion: <strong>90%</strong></p>
+                <div class="asn-stats-list" id="evAssignmentStats">
+                  <div class="stat-row"><span>Submitted On-Time</span><strong>14</strong></div>
+                  <div class="stat-row"><span>Late Submissions</span><strong>4</strong></div>
+                  <div class="stat-row"><span>Missed Submissions</span><strong class="text-critical">2</strong></div>
+                  <div class="stat-row"><span>Average Score</span><strong>80.6%</strong></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 5: METRICS -->
+      <section id="tab-metrics" class="tab-pane">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Real-Time Operational Telemetry & Benchmarks</h3>
+              <p class="card-desc">Live metrics consumed directly from GET /metrics API</p>
+            </div>
+            <button class="btn btn-secondary" id="btnRefreshMetrics">Refresh Telemetry</button>
+          </div>
+
+          <!-- Metrics KPI Cards -->
+          <div class="metrics-grid">
+            <div class="metric-box">
+              <div class="metric-num" id="mWorkflowCount">0</div>
+              <div class="metric-label">Workflows Executed</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-num" id="mAvgLatency">0 ms</div>
+              <div class="metric-label">Avg Execution Latency</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-num" id="mDatabaseOps">0</div>
+              <div class="metric-label">Database Operations</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-num" id="mRetries">0</div>
+              <div class="metric-label">Workflow Retries</div>
+            </div>
+          </div>
+
+          <!-- Tool Invocations Count Table -->
+          <div class="tool-usage-section">
+            <div class="section-title">Academic Tools Invocation Telemetry</div>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Academic Tool</th>
+                  <th>Category</th>
+                  <th>Invocations</th>
+                  <th>Execution Guarantee</th>
+                </tr>
+              </thead>
+              <tbody id="toolUsageTableBody">
+                <!-- Dynamically populated from /metrics -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Student Profile Modal -->
+    <div id="profileModal" class="modal-overlay" style="display:none;">
+      <div class="modal-box">
+        <div class="modal-header">
+          <h3 class="modal-title" id="modalStudentName">Student Profile</h3>
+          <button class="modal-close" id="btnModalClose">&times;</button>
+        </div>
+        <div class="modal-body" id="modalStudentContent">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

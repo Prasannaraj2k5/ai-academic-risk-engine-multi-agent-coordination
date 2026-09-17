@@ -1,0 +1,64 @@
+{
+  "interventions": [
+    {
+      "id": "INT_ATT_01",
+      "trigger": "Low attendance",
+      "title": "Structured Attendance Improvement Plan",
+      "description": "Establish a mandatory daily attendance verification protocol with faculty advisor check-ins every Monday.",
+      "target_factor": "Attendance",
+      "urgency": "High",
+      "duration_weeks": 4,
+      "oversight_required": true
+    },
+    {
+      "id": "INT_ATT_02",
+      "trigger": "Critical attendance",
+      "title": "Mandatory Faculty Counseling",
+      "description": "One-on-one counseling with Department Chair and Academic Counselor to evaluate attendance barriers and formulate remediation.",
+      "target_factor": "Attendance",
+      "urgency": "Immediate",
+      "duration_weeks": 2,
+      "oversight_required": true
+    },
+    {
+      "id": "INT_PERF_01",
+      "trigger": "Performance decline",
+      "title": "Academic Mentoring Program",
+      "description": "Pair student with a senior faculty mentor to conduct bi-weekly study progress diagnostics and concept clarification.",
+      "target_factor": "Performance",
+      "urgency": "Medium",
+      "duration_weeks": 6,
+      "oversight_required": true
+    },
+    {
+      "id": "INT_PERF_02",
+      "trigger": "Failed assessments",
+      "title": "Remedial Subject Tutorials",
+      "description": "Enroll student into specialized remedial tutorial cohorts for subjects scoring below passing threshold (<50%).",
+      "target_factor": "Assessments",
+      "urgency": "Immediate",
+      "duration_weeks": 6,
+      "oversight_required": true
+    },
+    {
+      "id": "INT_ASN_01",
+      "trigger": "Missed assignments",
+      "title": "Assignment Recovery Plan",
+      "description": "Provide a structured 14-day schedule for submission of missed coursework and late deliverables with guided office hours.",
+      "target_factor": "Assignments",
+      "urgency": "High",
+      "duration_weeks": 3,
+      "oversight_required": false
+    },
+    {
+      "id": "INT_HIST_01",
+      "trigger": "Prior academic warning",
+      "title": "Academic Probation Monitoring Agreement",
+      "description": "Comprehensive academic contract with bi-weekly milestone milestones signed by student, advisor, and department head.",
+      "target_factor": "History",
+      "urgency": "High",
+      "duration_weeks": 8,
+      "oversight_required": true
+    }
+  ]
+}

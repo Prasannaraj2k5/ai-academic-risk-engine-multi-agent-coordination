@@ -1,0 +1,301 @@
+student_id,course_code,course_name,attendance_pct,internal_marks,midterm_marks,final_assessment_marks,total_marks,passed
+STU101,CS301,Data Structures & Algorithms,90.2,23.9,23.9,31.9,79.8,True
+STU101,CS302,Design & Analysis of Algorithms,92.8,23.1,23.1,30.8,77.1,True
+STU101,CS303,Database Management Systems,92.6,24.5,24.5,32.7,81.8,True
+STU101,CS304,Operating Systems Principles,90.5,24.8,24.8,33.1,82.8,True
+STU101,CS305,Computer Networks & Protocols,87.5,24.9,24.9,33.2,83.0,True
+STU102,CS301,Data Structures & Algorithms,82.3,22.0,22.0,29.4,73.4,True
+STU102,CS302,Design & Analysis of Algorithms,84.9,21.9,21.9,29.2,73.0,True
+STU102,CS303,Database Management Systems,81.6,22.1,22.1,29.5,73.7,True
+STU102,CS304,Operating Systems Principles,80.8,22.6,22.6,30.1,75.2,True
+STU102,CS305,Computer Networks & Protocols,80.4,23.2,23.2,30.9,77.2,True
+STU103,CS301,Data Structures & Algorithms,91.8,25.6,25.6,34.2,85.5,True
+STU103,CS302,Design & Analysis of Algorithms,96.0,27.1,27.1,36.2,90.4,True
+STU103,CS303,Database Management Systems,96.4,26.9,26.9,35.9,89.7,True
+STU103,CS304,Operating Systems Principles,94.0,25.3,25.3,33.8,84.5,True
+STU103,CS305,Computer Networks & Protocols,97.0,25.4,25.4,33.9,84.8,True
+STU104,CS301,Data Structures & Algorithms,65.0,14.4,14.4,19.2,48.0,False
+STU104,CS302,Design & Analysis of Algorithms,62.0,13.5,13.5,18.0,45.0,False
+STU104,CS303,Database Management Systems,72.0,17.4,17.4,23.2,58.0,True
+STU104,CS304,Operating Systems Principles,70.0,18.0,18.0,24.0,60.0,True
+STU104,CS305,Computer Networks & Protocols,71.0,18.8,18.8,25.0,62.5,True
+STU105,CS301,Data Structures & Algorithms,88.2,22.9,22.9,30.6,76.5,True
+STU105,CS302,Design & Analysis of Algorithms,90.7,23.6,23.6,31.4,78.6,True
+STU105,CS303,Database Management Systems,91.7,24.3,24.3,32.4,81.1,True
+STU105,CS304,Operating Systems Principles,87.1,23.9,23.9,31.9,79.7,True
+STU105,CS305,Computer Networks & Protocols,90.9,24.5,24.5,32.7,81.7,True
+STU106,CS301,Data Structures & Algorithms,88.6,26.3,26.3,35.1,87.8,True
+STU106,CS302,Design & Analysis of Algorithms,85.6,26.2,26.2,34.9,87.3,True
+STU106,CS303,Database Management Systems,85.6,25.4,25.4,33.9,84.7,True
+STU106,CS304,Operating Systems Principles,87.3,26.7,26.7,35.6,89.0,True
+STU106,CS305,Computer Networks & Protocols,90.9,26.4,26.4,35.2,87.9,True
+STU107,CS301,Data Structures & Algorithms,73.0,18.6,18.6,24.8,62.0,True
+STU107,CS302,Design & Analysis of Algorithms,74.0,19.5,19.5,26.0,65.0,True
+STU107,CS303,Database Management Systems,75.0,19.8,19.8,26.4,66.0,True
+STU107,CS304,Operating Systems Principles,76.0,20.4,20.4,27.2,68.0,True
+STU107,CS305,Computer Networks & Protocols,74.0,21.0,21.0,28.0,70.0,True
+STU108,CS301,Data Structures & Algorithms,82.1,25.0,25.0,33.4,83.4,True
+STU108,CS302,Design & Analysis of Algorithms,82.5,23.4,23.4,31.2,78.0,True
+STU108,CS303,Database Management Systems,86.3,23.6,23.6,31.5,78.7,True
+STU108,CS304,Operating Systems Principles,84.5,25.2,25.2,33.6,83.9,True
+STU108,CS305,Computer Networks & Protocols,85.6,25.3,25.3,33.8,84.4,True
+STU109,CS301,Data Structures & Algorithms,84.6,27.1,27.1,36.2,90.4,True
+STU109,CS302,Design & Analysis of Algorithms,81.7,28.0,28.0,37.3,93.2,True
+STU109,CS303,Database Management Systems,81.2,26.1,26.1,34.8,86.9,True
+STU109,CS304,Operating Systems Principles,84.7,26.8,26.8,35.8,89.5,True
+STU109,CS305,Computer Networks & Protocols,79.8,27.9,27.9,37.2,93.0,True
+STU110,CS301,Data Structures & Algorithms,85.4,23.8,23.8,31.7,79.3,True
+STU110,CS302,Design & Analysis of Algorithms,90.3,24.1,24.1,32.1,80.2,True
+STU110,CS303,Database Management Systems,87.8,24.0,24.0,32.0,80.1,True
+STU110,CS304,Operating Systems Principles,86.8,24.9,24.9,33.2,83.1,True
+STU110,CS305,Computer Networks & Protocols,90.4,25.6,25.6,34.1,85.3,True
+STU111,CS301,Data Structures & Algorithms,82.5,24.4,24.4,32.6,81.4,True
+STU111,CS302,Design & Analysis of Algorithms,84.4,23.8,23.8,31.7,79.2,True
+STU111,CS303,Database Management Systems,81.1,24.9,24.9,33.2,83.0,True
+STU111,CS304,Operating Systems Principles,86.2,24.4,24.4,32.5,81.2,True
+STU111,CS305,Computer Networks & Protocols,81.6,24.3,24.3,32.4,80.9,True
+STU112,CS301,Data Structures & Algorithms,62.0,13.8,13.8,18.4,46.0,False
+STU112,CS302,Design & Analysis of Algorithms,63.0,14.4,14.4,19.2,48.0,False
+STU112,CS303,Database Management Systems,65.0,16.5,16.5,22.0,55.0,True
+STU112,CS304,Operating Systems Principles,64.0,16.8,16.8,22.4,56.0,True
+STU112,CS305,Computer Networks & Protocols,66.0,16.5,16.5,22.0,55.0,True
+STU113,CS301,Data Structures & Algorithms,88.4,26.9,26.9,35.9,89.7,True
+STU113,CS302,Design & Analysis of Algorithms,85.8,28.1,28.1,37.5,93.8,True
+STU113,CS303,Database Management Systems,86.5,28.1,28.1,37.4,93.6,True
+STU113,CS304,Operating Systems Principles,88.1,27.8,27.8,37.1,92.8,True
+STU113,CS305,Computer Networks & Protocols,84.9,27.6,27.6,36.8,92.0,True
+STU114,CS301,Data Structures & Algorithms,89.8,23.2,23.2,30.9,77.3,True
+STU114,CS302,Design & Analysis of Algorithms,93.6,24.1,24.1,32.2,80.5,True
+STU114,CS303,Database Management Systems,92.6,22.8,22.8,30.4,75.9,True
+STU114,CS304,Operating Systems Principles,93.4,23.3,23.3,31.0,77.6,True
+STU114,CS305,Computer Networks & Protocols,93.7,23.2,23.2,30.9,77.2,True
+STU115,CS301,Data Structures & Algorithms,73.0,18.6,18.6,24.8,62.0,True
+STU115,CS302,Design & Analysis of Algorithms,74.0,19.5,19.5,26.0,65.0,True
+STU115,CS303,Database Management Systems,75.0,19.8,19.8,26.4,66.0,True
+STU115,CS304,Operating Systems Principles,76.0,20.4,20.4,27.2,68.0,True
+STU115,CS305,Computer Networks & Protocols,74.0,21.0,21.0,28.0,70.0,True
+STU116,CS301,Data Structures & Algorithms,84.8,26.4,26.4,35.2,88.0,True
+STU116,CS302,Design & Analysis of Algorithms,88.3,26.3,26.3,35.1,87.8,True
+STU116,CS303,Database Management Systems,84.3,28.2,28.2,37.6,93.9,True
+STU116,CS304,Operating Systems Principles,87.7,27.6,27.6,36.8,92.1,True
+STU116,CS305,Computer Networks & Protocols,86.0,27.4,27.4,36.5,91.3,True
+STU117,CS301,Data Structures & Algorithms,86.0,23.7,23.7,31.6,78.9,True
+STU117,CS302,Design & Analysis of Algorithms,82.7,23.0,23.0,30.7,76.7,True
+STU117,CS303,Database Management Systems,85.0,22.3,22.3,29.8,74.5,True
+STU117,CS304,Operating Systems Principles,86.0,23.7,23.7,31.6,78.9,True
+STU117,CS305,Computer Networks & Protocols,84.5,23.4,23.4,31.2,77.9,True
+STU118,CS301,Data Structures & Algorithms,71.0,14.4,14.4,19.2,48.0,False
+STU118,CS302,Design & Analysis of Algorithms,72.0,18.0,18.0,24.0,60.0,True
+STU118,CS303,Database Management Systems,73.0,18.6,18.6,24.8,62.0,True
+STU118,CS304,Operating Systems Principles,72.0,19.2,19.2,25.6,64.0,True
+STU118,CS305,Computer Networks & Protocols,72.0,19.8,19.8,26.4,66.0,True
+STU119,CS301,Data Structures & Algorithms,81.9,24.0,24.0,32.0,80.1,True
+STU119,CS302,Design & Analysis of Algorithms,78.9,21.9,21.9,29.2,73.0,True
+STU119,CS303,Database Management Systems,78.3,23.5,23.5,31.3,78.2,True
+STU119,CS304,Operating Systems Principles,81.6,22.3,22.3,29.7,74.2,True
+STU119,CS305,Computer Networks & Protocols,82.2,23.5,23.5,31.4,78.4,True
+STU120,CS301,Data Structures & Algorithms,82.3,25.4,25.4,33.9,84.7,True
+STU120,CS302,Design & Analysis of Algorithms,84.3,26.6,26.6,35.5,88.8,True
+STU120,CS303,Database Management Systems,84.3,26.9,26.9,35.8,89.6,True
+STU120,CS304,Operating Systems Principles,80.9,26.2,26.2,35.0,87.4,True
+STU120,CS305,Computer Networks & Protocols,82.0,25.7,25.7,34.3,85.8,True
+STU121,CS301,Data Structures & Algorithms,73.0,18.6,18.6,24.8,62.0,True
+STU121,CS302,Design & Analysis of Algorithms,74.0,19.5,19.5,26.0,65.0,True
+STU121,CS303,Database Management Systems,75.0,19.8,19.8,26.4,66.0,True
+STU121,CS304,Operating Systems Principles,76.0,20.4,20.4,27.2,68.0,True
+STU121,CS305,Computer Networks & Protocols,74.0,21.0,21.0,28.0,70.0,True
+STU122,CS301,Data Structures & Algorithms,86.0,27.2,27.2,36.3,90.7,True
+STU122,CS302,Design & Analysis of Algorithms,85.4,27.8,27.8,37.0,92.6,True
+STU122,CS303,Database Management Systems,84.1,27.4,27.4,36.6,91.5,True
+STU122,CS304,Operating Systems Principles,81.8,27.4,27.4,36.6,91.5,True
+STU122,CS305,Computer Networks & Protocols,82.3,28.0,28.0,37.3,93.3,True
+STU123,CS301,Data Structures & Algorithms,83.0,24.9,24.9,33.2,83.0,True
+STU123,CS302,Design & Analysis of Algorithms,82.9,26.8,26.8,35.7,89.2,True
+STU123,CS303,Database Management Systems,77.5,25.4,25.4,33.8,84.6,True
+STU123,CS304,Operating Systems Principles,79.9,26.7,26.7,35.6,89.0,True
+STU123,CS305,Computer Networks & Protocols,83.1,26.8,26.8,35.8,89.4,True
+STU124,CS301,Data Structures & Algorithms,94.9,23.5,23.5,31.4,78.4,True
+STU124,CS302,Design & Analysis of Algorithms,90.8,23.3,23.3,31.1,77.8,True
+STU124,CS303,Database Management Systems,95.4,23.9,23.9,31.9,79.8,True
+STU124,CS304,Operating Systems Principles,93.2,24.3,24.3,32.4,80.9,True
+STU124,CS305,Computer Networks & Protocols,93.5,22.8,22.8,30.4,76.1,True
+STU125,CS301,Data Structures & Algorithms,71.0,14.4,14.4,19.2,48.0,False
+STU125,CS302,Design & Analysis of Algorithms,72.0,18.0,18.0,24.0,60.0,True
+STU125,CS303,Database Management Systems,73.0,18.6,18.6,24.8,62.0,True
+STU125,CS304,Operating Systems Principles,72.0,19.2,19.2,25.6,64.0,True
+STU125,CS305,Computer Networks & Protocols,72.0,19.8,19.8,26.4,66.0,True
+STU126,CS301,Data Structures & Algorithms,97.1,23.0,23.0,30.7,76.7,True
+STU126,CS302,Design & Analysis of Algorithms,96.0,23.5,23.5,31.4,78.4,True
+STU126,CS303,Database Management Systems,94.0,23.4,23.4,31.2,78.1,True
+STU126,CS304,Operating Systems Principles,96.7,22.5,22.5,30.0,74.9,True
+STU126,CS305,Computer Networks & Protocols,97.1,23.7,23.7,31.6,79.0,True
+STU127,CS301,Data Structures & Algorithms,95.5,25.0,25.0,33.3,83.2,True
+STU127,CS302,Design & Analysis of Algorithms,94.9,25.3,25.3,33.8,84.4,True
+STU127,CS303,Database Management Systems,96.0,25.7,25.7,34.2,85.6,True
+STU127,CS304,Operating Systems Principles,93.0,24.6,24.6,32.8,81.9,True
+STU127,CS305,Computer Networks & Protocols,94.2,24.0,24.0,32.0,80.0,True
+STU128,CS301,Data Structures & Algorithms,73.0,18.6,18.6,24.8,62.0,True
+STU128,CS302,Design & Analysis of Algorithms,74.0,19.5,19.5,26.0,65.0,True
+STU128,CS303,Database Management Systems,75.0,19.8,19.8,26.4,66.0,True
+STU128,CS304,Operating Systems Principles,76.0,20.4,20.4,27.2,68.0,True
+STU128,CS305,Computer Networks & Protocols,74.0,21.0,21.0,28.0,70.0,True
+STU129,CS301,Data Structures & Algorithms,79.3,24.8,24.8,33.1,82.7,True
+STU129,CS302,Design & Analysis of Algorithms,77.7,24.9,24.9,33.2,83.1,True
+STU129,CS303,Database Management Systems,82.5,23.6,23.6,31.5,78.7,True
+STU129,CS304,Operating Systems Principles,78.3,24.4,24.4,32.5,81.3,True
+STU129,CS305,Computer Networks & Protocols,82.2,24.8,24.8,33.0,82.6,True
+STU130,CS301,Data Structures & Algorithms,80.5,24.6,24.6,32.8,81.9,True
+STU130,CS302,Design & Analysis of Algorithms,83.5,25.6,25.6,34.2,85.5,True
+STU130,CS303,Database Management Systems,84.6,25.9,25.9,34.5,86.3,True
+STU130,CS304,Operating Systems Principles,83.3,26.7,26.7,35.6,89.0,True
+STU130,CS305,Computer Networks & Protocols,85.0,25.1,25.1,33.5,83.8,True
+STU131,CS301,Data Structures & Algorithms,81.2,23.6,23.6,31.4,78.5,True
+STU131,CS302,Design & Analysis of Algorithms,86.1,25.7,25.7,34.2,85.6,True
+STU131,CS303,Database Management Systems,83.5,25.1,25.1,33.4,83.5,True
+STU131,CS304,Operating Systems Principles,82.0,23.8,23.8,31.7,79.3,True
+STU131,CS305,Computer Networks & Protocols,84.4,24.0,24.0,32.0,79.9,True
+STU132,CS301,Data Structures & Algorithms,93.4,25.2,25.2,33.6,84.1,True
+STU132,CS302,Design & Analysis of Algorithms,91.0,26.3,26.3,35.1,87.8,True
+STU132,CS303,Database Management Systems,90.2,26.0,26.0,34.7,86.8,True
+STU132,CS304,Operating Systems Principles,89.9,25.2,25.2,33.6,83.9,True
+STU132,CS305,Computer Networks & Protocols,87.8,26.4,26.4,35.2,87.9,True
+STU133,CS301,Data Structures & Algorithms,73.0,18.6,18.6,24.8,62.0,True
+STU133,CS302,Design & Analysis of Algorithms,74.0,19.5,19.5,26.0,65.0,True
+STU133,CS303,Database Management Systems,75.0,19.8,19.8,26.4,66.0,True
+STU133,CS304,Operating Systems Principles,76.0,20.4,20.4,27.2,68.0,True
+STU133,CS305,Computer Networks & Protocols,74.0,21.0,21.0,28.0,70.0,True
+STU134,CS301,Data Structures & Algorithms,83.9,21.4,21.4,28.5,71.2,True
+STU134,CS302,Design & Analysis of Algorithms,81.6,22.9,22.9,30.6,76.5,True
+STU134,CS303,Database Management Systems,81.7,21.5,21.5,28.6,71.6,True
+STU134,CS304,Operating Systems Principles,79.8,22.4,22.4,29.8,74.6,True
+STU134,CS305,Computer Networks & Protocols,81.1,22.3,22.3,29.7,74.3,True
+STU135,CS301,Data Structures & Algorithms,88.5,24.5,24.5,32.7,81.8,True
+STU135,CS302,Design & Analysis of Algorithms,89.3,25.9,25.9,34.6,86.4,True
+STU135,CS303,Database Management Systems,90.2,26.5,26.5,35.3,88.3,True
+STU135,CS304,Operating Systems Principles,86.7,24.8,24.8,33.1,82.7,True
+STU135,CS305,Computer Networks & Protocols,86.4,26.0,26.0,34.6,86.6,True
+STU136,CS301,Data Structures & Algorithms,88.1,27.4,27.4,36.6,91.5,True
+STU136,CS302,Design & Analysis of Algorithms,88.5,27.6,27.6,36.8,92.1,True
+STU136,CS303,Database Management Systems,91.4,27.4,27.4,36.5,91.3,True
+STU136,CS304,Operating Systems Principles,91.6,27.0,27.0,36.0,90.0,True
+STU136,CS305,Computer Networks & Protocols,87.0,28.3,28.3,37.7,94.2,True
+STU137,CS301,Data Structures & Algorithms,78.6,21.6,21.6,28.8,72.0,True
+STU137,CS302,Design & Analysis of Algorithms,78.5,23.2,23.2,30.9,77.3,True
+STU137,CS303,Database Management Systems,83.1,22.3,22.3,29.8,74.4,True
+STU137,CS304,Operating Systems Principles,82.9,21.6,21.6,28.8,72.0,True
+STU137,CS305,Computer Networks & Protocols,78.7,22.2,22.2,29.6,74.1,True
+STU138,CS301,Data Structures & Algorithms,91.9,26.5,26.5,35.3,88.3,True
+STU138,CS302,Design & Analysis of Algorithms,89.1,26.3,26.3,35.1,87.7,True
+STU138,CS303,Database Management Systems,92.0,24.8,24.8,33.1,82.7,True
+STU138,CS304,Operating Systems Principles,93.4,26.3,26.3,35.1,87.8,True
+STU138,CS305,Computer Networks & Protocols,89.7,25.4,25.4,33.8,84.6,True
+STU139,CS301,Data Structures & Algorithms,71.0,14.4,14.4,19.2,48.0,False
+STU139,CS302,Design & Analysis of Algorithms,72.0,18.0,18.0,24.0,60.0,True
+STU139,CS303,Database Management Systems,73.0,18.6,18.6,24.8,62.0,True
+STU139,CS304,Operating Systems Principles,72.0,19.2,19.2,25.6,64.0,True
+STU139,CS305,Computer Networks & Protocols,72.0,19.8,19.8,26.4,66.0,True
+STU140,CS301,Data Structures & Algorithms,93.8,25.1,25.1,33.4,83.6,True
+STU140,CS302,Design & Analysis of Algorithms,93.2,23.9,23.9,31.8,79.6,True
+STU140,CS303,Database Management Systems,89.3,24.7,24.7,32.9,82.2,True
+STU140,CS304,Operating Systems Principles,91.7,25.0,25.0,33.4,83.4,True
+STU140,CS305,Computer Networks & Protocols,90.6,24.8,24.8,33.1,82.7,True
+STU141,CS301,Data Structures & Algorithms,73.0,18.6,18.6,24.8,62.0,True
+STU141,CS302,Design & Analysis of Algorithms,74.0,19.5,19.5,26.0,65.0,True
+STU141,CS303,Database Management Systems,75.0,19.8,19.8,26.4,66.0,True
+STU141,CS304,Operating Systems Principles,76.0,20.4,20.4,27.2,68.0,True
+STU141,CS305,Computer Networks & Protocols,74.0,21.0,21.0,28.0,70.0,True
+STU142,CS301,Data Structures & Algorithms,95.9,23.1,23.1,30.8,77.1,True
+STU142,CS302,Design & Analysis of Algorithms,92.3,23.3,23.3,31.1,77.7,True
+STU142,CS303,Database Management Systems,96.1,25.4,25.4,33.8,84.6,True
+STU142,CS304,Operating Systems Principles,94.2,24.5,24.5,32.6,81.6,True
+STU142,CS305,Computer Networks & Protocols,92.2,24.2,24.2,32.2,80.6,True
+STU143,CS301,Data Structures & Algorithms,86.7,26.4,26.4,35.2,88.1,True
+STU143,CS302,Design & Analysis of Algorithms,82.5,26.5,26.5,35.4,88.4,True
+STU143,CS303,Database Management Systems,82.3,25.8,25.8,34.4,86.1,True
+STU143,CS304,Operating Systems Principles,84.6,25.9,25.9,34.6,86.5,True
+STU143,CS305,Computer Networks & Protocols,84.0,26.8,26.8,35.7,89.2,True
+STU144,CS301,Data Structures & Algorithms,82.5,23.6,23.6,31.5,78.7,True
+STU144,CS302,Design & Analysis of Algorithms,79.3,22.0,22.0,29.4,73.4,True
+STU144,CS303,Database Management Systems,79.2,23.5,23.5,31.3,78.2,True
+STU144,CS304,Operating Systems Principles,83.0,23.7,23.7,31.6,79.1,True
+STU144,CS305,Computer Networks & Protocols,79.3,22.0,22.0,29.3,73.2,True
+STU145,CS301,Data Structures & Algorithms,96.7,23.9,23.9,31.9,79.7,True
+STU145,CS302,Design & Analysis of Algorithms,97.7,25.3,25.3,33.7,84.3,True
+STU145,CS303,Database Management Systems,94.1,24.8,24.8,33.1,82.8,True
+STU145,CS304,Operating Systems Principles,96.5,23.2,23.2,31.0,77.4,True
+STU145,CS305,Computer Networks & Protocols,94.3,24.4,24.4,32.5,81.2,True
+STU146,CS301,Data Structures & Algorithms,73.0,18.6,18.6,24.8,62.0,True
+STU146,CS302,Design & Analysis of Algorithms,74.0,19.5,19.5,26.0,65.0,True
+STU146,CS303,Database Management Systems,75.0,19.8,19.8,26.4,66.0,True
+STU146,CS304,Operating Systems Principles,76.0,20.4,20.4,27.2,68.0,True
+STU146,CS305,Computer Networks & Protocols,74.0,21.0,21.0,28.0,70.0,True
+STU147,CS301,Data Structures & Algorithms,90.7,22.8,22.8,30.4,75.9,True
+STU147,CS302,Design & Analysis of Algorithms,90.9,22.7,22.7,30.3,75.8,True
+STU147,CS303,Database Management Systems,91.3,21.9,21.9,29.2,73.0,True
+STU147,CS304,Operating Systems Principles,95.1,23.2,23.2,30.9,77.2,True
+STU147,CS305,Computer Networks & Protocols,96.4,23.0,23.0,30.7,76.7,True
+STU148,CS301,Data Structures & Algorithms,84.0,24.6,24.6,32.8,82.1,True
+STU148,CS302,Design & Analysis of Algorithms,82.7,24.8,24.8,33.1,82.8,True
+STU148,CS303,Database Management Systems,82.9,24.9,24.9,33.2,82.9,True
+STU148,CS304,Operating Systems Principles,85.8,24.7,24.7,32.9,82.3,True
+STU148,CS305,Computer Networks & Protocols,83.1,24.9,24.9,33.2,83.1,True
+STU149,CS301,Data Structures & Algorithms,89.1,27.5,27.5,36.6,91.6,True
+STU149,CS302,Design & Analysis of Algorithms,88.0,27.9,27.9,37.2,93.0,True
+STU149,CS303,Database Management Systems,88.8,27.8,27.8,37.0,92.5,True
+STU149,CS304,Operating Systems Principles,85.6,28.4,28.4,37.9,94.7,True
+STU149,CS305,Computer Networks & Protocols,91.0,26.9,26.9,35.9,89.7,True
+STU150,CS301,Data Structures & Algorithms,73.0,18.6,18.6,24.8,62.0,True
+STU150,CS302,Design & Analysis of Algorithms,74.0,19.5,19.5,26.0,65.0,True
+STU150,CS303,Database Management Systems,75.0,19.8,19.8,26.4,66.0,True
+STU150,CS304,Operating Systems Principles,76.0,20.4,20.4,27.2,68.0,True
+STU150,CS305,Computer Networks & Protocols,74.0,21.0,21.0,28.0,70.0,True
+STU151,CS301,Data Structures & Algorithms,92.0,25.0,25.0,33.3,83.2,True
+STU151,CS302,Design & Analysis of Algorithms,93.1,23.9,23.9,31.9,79.7,True
+STU151,CS303,Database Management Systems,93.9,24.3,24.3,32.4,81.0,True
+STU151,CS304,Operating Systems Principles,96.2,23.6,23.6,31.5,78.8,True
+STU151,CS305,Computer Networks & Protocols,94.5,25.8,25.8,34.4,86.1,True
+STU152,CS301,Data Structures & Algorithms,89.1,24.6,24.6,32.8,82.1,True
+STU152,CS302,Design & Analysis of Algorithms,90.5,23.1,23.1,30.8,76.9,True
+STU152,CS303,Database Management Systems,90.7,24.7,24.7,32.9,82.2,True
+STU152,CS304,Operating Systems Principles,88.7,24.4,24.4,32.6,81.4,True
+STU152,CS305,Computer Networks & Protocols,90.6,23.7,23.7,31.6,78.9,True
+STU153,CS301,Data Structures & Algorithms,92.2,21.3,21.3,28.4,71.0,True
+STU153,CS302,Design & Analysis of Algorithms,95.9,23.2,23.2,30.9,77.3,True
+STU153,CS303,Database Management Systems,93.6,21.6,21.6,28.8,72.0,True
+STU153,CS304,Operating Systems Principles,95.8,22.2,22.2,29.6,73.9,True
+STU153,CS305,Computer Networks & Protocols,95.0,23.3,23.3,31.0,77.6,True
+STU154,CS301,Data Structures & Algorithms,73.0,18.6,18.6,24.8,62.0,True
+STU154,CS302,Design & Analysis of Algorithms,74.0,19.5,19.5,26.0,65.0,True
+STU154,CS303,Database Management Systems,75.0,19.8,19.8,26.4,66.0,True
+STU154,CS304,Operating Systems Principles,76.0,20.4,20.4,27.2,68.0,True
+STU154,CS305,Computer Networks & Protocols,74.0,21.0,21.0,28.0,70.0,True
+STU155,CS301,Data Structures & Algorithms,84.4,23.9,23.9,31.9,79.7,True
+STU155,CS302,Design & Analysis of Algorithms,88.9,25.3,25.3,33.8,84.4,True
+STU155,CS303,Database Management Systems,90.0,25.6,25.6,34.2,85.5,True
+STU155,CS304,Operating Systems Principles,88.6,24.6,24.6,32.8,81.9,True
+STU155,CS305,Computer Networks & Protocols,89.1,25.5,25.5,34.0,85.0,True
+STU156,CS301,Data Structures & Algorithms,86.4,23.7,23.7,31.6,79.1,True
+STU156,CS302,Design & Analysis of Algorithms,82.1,24.9,24.9,33.2,83.0,True
+STU156,CS303,Database Management Systems,84.4,25.1,25.1,33.4,83.5,True
+STU156,CS304,Operating Systems Principles,81.4,24.3,24.3,32.4,81.0,True
+STU156,CS305,Computer Networks & Protocols,83.8,25.1,25.1,33.4,83.5,True
+STU157,CS301,Data Structures & Algorithms,91.9,25.9,25.9,34.5,86.2,True
+STU157,CS302,Design & Analysis of Algorithms,93.8,25.2,25.2,33.6,83.9,True
+STU157,CS303,Database Management Systems,89.4,24.8,24.8,33.0,82.6,True
+STU157,CS304,Operating Systems Principles,93.1,23.9,23.9,31.8,79.6,True
+STU157,CS305,Computer Networks & Protocols,92.8,25.3,25.3,33.7,84.3,True
+STU158,CS301,Data Structures & Algorithms,73.0,18.6,18.6,24.8,62.0,True
+STU158,CS302,Design & Analysis of Algorithms,74.0,19.5,19.5,26.0,65.0,True
+STU158,CS303,Database Management Systems,75.0,19.8,19.8,26.4,66.0,True
+STU158,CS304,Operating Systems Principles,76.0,20.4,20.4,27.2,68.0,True
+STU158,CS305,Computer Networks & Protocols,74.0,21.0,21.0,28.0,70.0,True
+STU159,CS301,Data Structures & Algorithms,82.3,21.8,21.8,29.0,72.6,True
+STU159,CS302,Design & Analysis of Algorithms,82.5,23.2,23.2,30.9,77.2,True
+STU159,CS303,Database Management Systems,85.6,22.8,22.8,30.4,76.0,True
+STU159,CS304,Operating Systems Principles,83.3,22.6,22.6,30.1,75.2,True
+STU159,CS305,Computer Networks & Protocols,82.6,23.6,23.6,31.5,78.7,True
+STU160,CS301,Data Structures & Algorithms,87.2,27.9,27.9,37.2,93.1,True
+STU160,CS302,Design & Analysis of Algorithms,89.3,27.9,27.9,37.2,92.9,True
+STU160,CS303,Database Management Systems,89.1,26.3,26.3,35.0,87.6,True
+STU160,CS304,Operating Systems Principles,89.3,28.0,28.0,37.4,93.4,True
+STU160,CS305,Computer Networks & Protocols,90.1,26.5,26.5,35.3,88.2,True

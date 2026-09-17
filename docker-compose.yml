@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  # Primary PostgreSQL 15 Database
+  db:
+    image: postgres:15-alpine
+    container_name: academic_risk_pg
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: academic_risk_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d academic_risk_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # FastAPI Multi-Agent Engine
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: academic_risk_api
+    restart: unless-stopped
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/academic_risk_db
+      - SQLITE_FALLBACK_URL=sqlite:///./academic_risk.db
+      - GROQ_API_KEY=${GROQ_API_KEY:-}
+      - GROQ_MODEL=${GROQ_MODEL:-llama-3.3-70b-versatile}
+      - GROQ_MAX_RETRIES=2
+      - APP_HOST=0.0.0.0
+      - APP_PORT=8000
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./data:/app/data
+
+volumes:
+  pgdata:

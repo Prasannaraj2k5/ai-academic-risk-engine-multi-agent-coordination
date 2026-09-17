@@ -1,0 +1,43 @@
+[
+  {
+    "student_id": "STU104",
+    "semester": 4,
+    "recorded_risk_score": 58,
+    "risk_band": "HIGH",
+    "historical_flags": [
+      "Prior semester attendance warning",
+      "Midterm slump in CS202"
+    ],
+    "history_contribution_score": 7,
+    "interventions_taken": [
+      "Informal faculty discussion on attendance"
+    ],
+    "outcome": "Partial recovery to 74% final semester average"
+  },
+  {
+    "student_id": "STU112",
+    "semester": 4,
+    "recorded_risk_score": 62,
+    "risk_band": "HIGH",
+    "historical_flags": [
+      "Prior assessment backlog"
+    ],
+    "history_contribution_score": 8,
+    "interventions_taken": [
+      "Tutorial support"
+    ],
+    "outcome": "Borderline pass"
+  },
+  {
+    "student_id": "STU118",
+    "semester": 4,
+    "recorded_risk_score": 42,
+    "risk_band": "MEDIUM",
+    "historical_flags": [
+      "Occasional late submissions"
+    ],
+    "history_contribution_score": 4,
+    "interventions_taken": [],
+    "outcome": "Standard progress"
+  }
+]

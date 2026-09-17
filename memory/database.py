@@ -20,8 +20,28 @@ DEFAULT_PG_URL = os.getenv(
 
 # Root-relative SQLite fallback path
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_SQLITE_PATH = PROJECT_ROOT / "academic_risk.db"
-DEFAULT_SQLITE_URL = os.getenv("SQLITE_FALLBACK_URL", f"sqlite:///{DEFAULT_SQLITE_PATH}")
+
+
+def get_sqlite_path() -> Path:
+    """Determine writable SQLite path: /tmp in serverless (Vercel/Lambda), project root locally."""
+    if os.getenv("VERCEL") or os.getenv("AWS_LAMBDA_FUNCTION_NAME") or os.getenv("VERCEL_ENV"):
+        return Path("/tmp") / "academic_risk.db"
+    try:
+        test_path = PROJECT_ROOT / ".write_test"
+        test_path.touch()
+        test_path.unlink()
+        return PROJECT_ROOT / "academic_risk.db"
+    except (OSError, PermissionError):
+        return Path("/tmp") / "academic_risk.db"
+
+
+def get_sqlite_url() -> str:
+    """Return the active SQLite fallback connection string."""
+    override = os.getenv("SQLITE_FALLBACK_URL")
+    if override:
+        return override
+    return f"sqlite:///{get_sqlite_path()}"
+
 
 _engine = None
 _SessionLocal = None
@@ -35,33 +55,45 @@ def init_engine():
     if _engine is not None:
         return _engine
 
-    pg_candidate = DEFAULT_PG_URL
-    try:
-        # Quick connect timeout test
-        test_engine = create_engine(
-            pg_candidate,
-            connect_args={"connect_timeout": 2},
-            pool_pre_ping=True
-        )
-        with test_engine.connect() as conn:
-            conn.execute(text("SELECT 1"))
-        _engine = test_engine
-        _is_postgres = True
-        logger.info("Connected to primary PostgreSQL database: %s", pg_candidate.split("@")[-1])
-    except Exception as e:
-        logger.warning(
-            "Primary PostgreSQL database unreachable (%s). Activating SQLite development fallback: %s",
-            e,
-            DEFAULT_SQLITE_URL
-        )
+    pg_candidate = os.getenv("DATABASE_URL")
+    is_serverless = bool(os.getenv("VERCEL") or os.getenv("AWS_LAMBDA_FUNCTION_NAME") or os.getenv("VERCEL_ENV"))
+    # Only test PostgreSQL if configured and not attempting local connection in serverless
+    should_attempt_pg = bool(pg_candidate and ("localhost" not in pg_candidate or not is_serverless))
+
+    if should_attempt_pg:
+        try:
+            test_engine = create_engine(
+                pg_candidate,
+                connect_args={"connect_timeout": 2},
+                pool_pre_ping=True,
+            )
+            with test_engine.connect() as conn:
+                conn.execute(text("SELECT 1"))
+            _engine = test_engine
+            _is_postgres = True
+            logger.info("Connected to primary PostgreSQL database: %s", pg_candidate.split("@")[-1])
+        except Exception as e:
+            logger.warning(
+                "Primary PostgreSQL database unreachable (%s). Activating SQLite development fallback.",
+                e,
+            )
+            _engine = None
+
+    if _engine is None:
+        sqlite_url = get_sqlite_url()
+        logger.info("Activating SQLite fallback: %s", sqlite_url)
         _engine = create_engine(
-            DEFAULT_SQLITE_URL,
-            connect_args={"check_same_thread": False} if "sqlite" in DEFAULT_SQLITE_URL else {},
-            pool_pre_ping=True
+            sqlite_url,
+            connect_args={"check_same_thread": False} if "sqlite" in sqlite_url else {},
+            pool_pre_ping=True,
         )
         _is_postgres = False
 
-    Base.metadata.create_all(bind=_engine)
+    try:
+        Base.metadata.create_all(bind=_engine)
+    except Exception as e:
+        logger.warning("Base.metadata.create_all notice: %s", e)
+
     _SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=_engine)
     return _engine
 

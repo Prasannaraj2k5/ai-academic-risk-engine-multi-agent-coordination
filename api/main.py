@@ -38,7 +38,13 @@ app.include_router(api_router)
 @app.on_event("startup")
 def on_startup():
     """Ensure database schema is created and synthetic data is seeded on server start."""
-    seed_database()
+    try:
+        seed_database()
+    except Exception as e:
+        # Prevent serverless cold-start failure if seeding cannot complete
+        import logging
+        logging.getLogger("api.main").warning("Database seeding during startup notice: %s", e)
+
 
 
 # Mount frontend static directory if exists
